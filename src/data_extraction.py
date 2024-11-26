@@ -1,13 +1,43 @@
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 from fuzzywuzzy import fuzz
-import re
-from sklearn.feature_extraction.text import TfidfVectorizer
+import numpy as np
 import os
 import requests
 from docx import Document
+import time
+
+def read_and_concatenate_csv(folder_path):
+    """
+    Reads all CSV files in the specified folder and concatenates them into a single Pandas DataFrame.
+
+    Parameters:
+    folder_path (str): Path to the folder containing CSV files.
+
+    Returns:
+    pd.DataFrame: DataFrame containing concatenated contents of all CSV files in the folder.
+    """
+    # List to store individual DataFrames
+    dataframes = []
+    
+    # Iterate through all files in the folder
+    for file_name in os.listdir(folder_path):
+        # Check if the file is a CSV
+        if file_name.endswith('.csv'):
+            file_path = os.path.join(folder_path, file_name)
+            try:
+                # Read the CSV file and append it to the list
+                df = pd.read_csv(file_path)
+                dataframes.append(df)
+            except Exception as e:
+                print(f"Error reading {file_name}: {e}")
+    
+    # Concatenate all DataFrames in the list
+    if dataframes:
+        return pd.concat(dataframes, ignore_index=True)
+    else:
+        print("No CSV files found in the specified folder.")
+        return pd.DataFrame()
+    
 
 def check_similar_words(df, column, keywords, threshold=80):
     """
@@ -47,6 +77,10 @@ def process_link(link, output_folder, idx):
         str: A success or error message.
     """
     try:
+        
+        t = np.random.uniform(0.2, 1)
+        time.sleep(t)  # Add some latency for stealth web crawling, and avoid error 403.
+
         # Download the Word document
         response = requests.get(link)
         response.raise_for_status()  # Raise exception for HTTP errors
@@ -73,7 +107,7 @@ def process_link(link, output_folder, idx):
     except Exception as e:
         return f"Error processing {link}: {e}"
 
-def download_and_convert_docs_with_apply(links_series, output_folder):
+def download_and_convert(links_series, output_folder):
     """
     Downloads Word documents from a pandas Series of links, converts them to text, 
     and saves the text files in the specified folder using `apply`.
