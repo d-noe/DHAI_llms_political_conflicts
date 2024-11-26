@@ -26,13 +26,12 @@ class DatasetGenerator:
         output_folder = '../data/processed/'
         _ = DatasetGenerator(input_folder, output_folder)
         """
-        
+
         self.input_folder = input_folder
         self.output_folder = output_folder
 
         self.load_table()
-        self.download_resolutions()
-    
+
     def load_table(self):
         self.df = read_and_concatenate_csv(self.input_folder)
 
@@ -40,8 +39,12 @@ class DatasetGenerator:
         keywords = ['ukraine', 'russia', 'israel', 'palestine']
         df_filtered = self.df[check_similar_words(self.df, column='document_title', keywords=keywords, threshold=70)]
         return df_filtered
-    
+
     def download_resolutions(self):
         df_filtered = self.filter_df()
         links_series = pd.Series(df_filtered['document_doc'])
         _ = download_and_convert(links_series, self.output_folder)
+
+    def resolution_df(self):
+        res = extract_resolutions(self.output_folder)
+        return res

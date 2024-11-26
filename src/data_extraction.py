@@ -5,6 +5,7 @@ import os
 import requests
 from docx import Document
 import time
+import re
 
 def read_and_concatenate_csv(folder_path):
     """
@@ -124,3 +125,37 @@ def download_and_convert(links_series, output_folder):
     
     # Use apply with a lambda to pass arguments
     return links_series.apply(lambda link: process_link(link, output_folder, links_series[links_series == link].index[0]))
+
+def extract_resolutions(folder_path):
+    resolutions = []
+    current_main_decision = None  # Store the current main decision for context
+
+    # Iterate over all files in the folder
+    for file_name in os.listdir(folder_path):
+        if file_name.endswith('.txt'):  # Process only .txt files
+            with open(os.path.join(folder_path, file_name), 'r', encoding='utf-8') as file:
+                for line in file:
+                    stripped_line = line.strip()
+
+                    # Check for main decisions (e.g., "1.")
+                    if stripped_line.startswith(tuple(f"{i}." for i in range(1, 100))):
+                        # Extract main decision and clean up unnecessary characters
+                        current_main_decision = re.sub(r"\.\s*", "", stripped_line[2:].strip())
+                        resolutions.append(f"The European Parliament {current_main_decision}")
+
+                    # Check for sub-decisions (e.g., "(a)")
+                    elif re.match(r"^\([a-z]+\)", stripped_line):  # Matches patterns like "(a)", "(b)", etc.
+                        if current_main_decision:
+                            # Clean up and format sub-decision
+                            sub_decision = re.sub(r"\.\s*", "", stripped_line)
+                            full_sub_decision = f"The European Parliament {current_main_decision}: {sub_decision}"
+                            resolutions.append(full_sub_decision)
+
+                    # Continuation lines for the main decision
+                    elif stripped_line and current_main_decision and not re.match(r"^\([a-z]+\)", stripped_line):
+                        # Append additional details to the last added resolution
+                        resolutions[-1] += " " + stripped_line
+
+    # Convert resolutions to a pandas Series and clean extra whitespace
+    resolutions_series = pd.Series([res.strip() for res in resolutions if res.strip()])
+    return resolutions_series
