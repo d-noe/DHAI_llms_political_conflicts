@@ -3,3 +3,4 @@ data/processed
 notebooks/dataprep.ipynb
 
 trials_*
+credentials*
