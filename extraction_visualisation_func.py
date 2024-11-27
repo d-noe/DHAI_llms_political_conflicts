@@ -28,7 +28,7 @@ def parse_results(results):
     Parse results and categorize sentiments
     
     Args:
-        results (list): List of results to analyze
+        results (dataframe): a dataframe as the variable "output" shown at the end of notbooks/prompter.ipynb"
     
     Returns:
         tuple: Sentiment counts and detailed results
@@ -70,7 +70,7 @@ def plot_sentiment_distribution(results):
     Create bar plot of sentiment distribution
     
     Args:
-        results (list): List of results to analyze
+        results (dataframe): a dataframe as the variable "output" shown at the end of notbooks/prompter.ipynb"
     
     Returns:
         tuple: Plotly figure and detailed results, or None if no results
@@ -101,17 +101,18 @@ def plot_sentiment_distribution(results):
 
 def plot_llm_results(prompt_results):
     """
-    Visualize LLM results with multiple charts
+    Visualize prompt results with multiple charts
     
     Args:
-        llm_results (dict): Dictionary of results from different LLM models
+        prompt_results(dictionary) : a list of dictionaries in which the key is the prompt and the value is the dataframe as the variable "output" shown at the end of notbooks/prompter.ipynb"
+        ex: [{prompt:dataframe},{prompt:dataframe},..]
     
     Returns:
         tuple: Response count figure and sentiment distribution figure, or None if no results
     """
     # Ensure we have results
     if not prompt_results:
-        print("No LLM results found.")
+        print("No prompt results found.")
         return None
 
     # Count responses per LLM
