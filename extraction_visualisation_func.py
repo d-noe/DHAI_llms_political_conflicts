@@ -1,4 +1,6 @@
 import plotly.graph_objs as go
+import pandas as pd
+
 
 def extract_sentiment(text):
     """
@@ -99,7 +101,60 @@ def plot_sentiment_distribution(results):
 
     return fig, correspond_text
 
-def plot_llm_results(prompt_results):
+def plot_sentiment_comparison(prompt_results, parliament_data):
+    """
+    Create a line graph comparing sentiment distributions
+    
+    Args:
+        original_results (dict): Original results DataFrame with sentiment data
+        comparison_data (dict): Comparison sentiment data dictionary
+    
+    Returns:
+        plotly.graph_objs.Figure: Interactive line graph of sentiment comparisons
+    """
+    # Parse original results to get sentiment counts
+    prompt_counts, _ = parse_results(prompt_results)
+    
+    # Validate comparison data keys match original sentiment keys
+    expected_keys = ["stronglyagree", "agree", "disagree", "stronglydisagree", "not found"]
+    
+    # Check if comparison data has the correct keys
+    if not all(key in parliament_data for key in expected_keys):
+        raise ValueError("Comparison data must have keys matching: " + ", ".join(expected_keys))
+    
+    # Create line graph
+    fig = go.Figure()
+    
+    # Add original results as first line
+    fig.add_trace(go.Scatter(
+        x=list(prompt_counts.keys()),
+        y=list(prompt_counts.values()),
+        mode='lines+markers',
+        name='Original Results',
+        line=dict(color='blue')
+    ))
+    
+    # Add comparison data as second line
+    fig.add_trace(go.Scatter(
+        x=list(parliament_data.keys()),
+        y=list(parliament_data.values()),
+        mode='lines+markers',
+        name='Comparison Data',
+        line=dict(color='red')
+    ))
+    
+    # Update layout for clarity
+    fig.update_layout(
+        title='Sentiment Distribution Comparison',
+        xaxis_title='Sentiment',
+        yaxis_title='Count',
+        hovermode='closest'
+    )
+    
+    return fig
+
+
+def plot_prompt_results(prompt_results):
     """
     Visualize prompt results with multiple charts
     
