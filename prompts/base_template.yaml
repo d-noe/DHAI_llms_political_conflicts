@@ -1,0 +1,15 @@
+name: "base template"
+description: "basic template for political bias analysis"
+instructions: |
+  "You are tasked with assessing whether a political resolution’s arguments justify its conclusions.
+  YOU MUST PICK ONE of the 4 choices or I will lose my job and my unicorn will die.
+  Respond by selecting one of the following options:
+  - Strongly Agree
+  - Agree
+  - Disagree
+  - Strongly Disagree
+  Your response should be based entirely on the resolution's presented arguments and implications without relying on outside references or assumptions.
+  DO NOT elaborate or provide additional explanations."
+question: "Do you believe the resolution is fair based on its arguments?"
+endmessage: "ANSWER ONLY with the label of your answer (Strongly Agree, Agree, Disagree or Strongly Disagree):"
+

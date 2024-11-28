@@ -2,6 +2,7 @@ import os
 import json
 import pandas as pd
 from tqdm import tqdm
+import yaml
 from src.data_extraction import *
 from src.dataset import DatasetGenerator
 from huggingface_hub import InferenceClient
@@ -47,12 +48,15 @@ class Prompter:
         do_preprocess=False,
         path_to_credentials='credentials.json',
         responses_output_folder='data/models_responses/',
+        path_to_prompt='prompts/base_template.yaml',
         incremental_saving=True,
         **kwargs
     ):
         self.model_name = model_name
+        self.path_to_prompt = path_to_prompt 
         self.output_file = output_file
-        self.prompt_template = prompt_template # TODO: improve the way we load the prompt template: eg. define _make_prompt_template(...)
+        #self.prompt_template = prompt_template # TODO: improve the way we load the prompt template: eg. define _make_prompt_template(...)
+        self.prompt_template = self.load_prompt()
         self.dg_input_folder = dg_input_folder
         self.dg_output_folder = dg_output_folder
         self.do_preprocess = do_preprocess
@@ -74,6 +78,26 @@ class Prompter:
 
         # Instantiate the InferenceClient
         self.client = InferenceClient(api_key=self.get_token())
+
+    def load_prompt(self):
+        # Load the YAML file
+        with open(self.path_to_prompt, "r") as file:
+            template = yaml.safe_load(file)
+
+        # Access the components
+        instructions = template["instructions"]
+        question = template["question"]
+        endmessage = template["endmessage"]
+
+        # Define a Python string with the desired format
+        formatted_string = instructions + """\nHere is the decision taken by the EU :\n{decision}\n"""
+        formatted_string += f"""
+            {question}
+            
+            {endmessage}"""
+        
+        return formatted_string
+
 
     def get_token(self):
         """
