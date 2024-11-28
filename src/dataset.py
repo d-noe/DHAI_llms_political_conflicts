@@ -36,7 +36,7 @@ class DatasetGenerator:
         self.df = read_and_concatenate_csv(self.input_folder)
 
     def filter_df(self):
-        keywords = ['ukraine', 'russia', 'israel', 'palestine', 'Gaza']
+        keywords = ['ukraine', 'russia', 'israel', 'palestine', 'gaza']
         df_filtered = self.df[check_similar_words(self.df, column='document_title', keywords=keywords, threshold=70)]
         return df_filtered
 
