@@ -1,0 +1,183 @@
+2024-11-27 12:22:15,554 - INFO: Prepared 1364 resolutions
+2024-11-27 12:22:15,658 - ERROR: Error processing batch starting at index 0: (Request ID: bbR5TzSWWZFzYRZwGgcpN)
+
+Bad request:
+Authorization header is correct, but the token seems invalid
+2024-11-27 12:22:15,750 - ERROR: Error processing resolution The European Parliament Condemns, in the strongest possible terms, Russia’s continued war of aggression against Ukraine, and the involvement of Belarus in this war, and demands that Russia immediately terminate all military activities in Ukraine, unconditionally withdraw all forces and military equipment from the entire internationally recognised territory of Ukraine and compensate Ukraine for the damage caused to its people, land, nature and infrastructure;: (Request ID: VK5u0l3_HGg-uZec8_EAs)
+
+Bad request:
+Authorization header is correct, but the token seems invalid
+2024-11-27 12:22:15,842 - ERROR: Error processing resolution The European Parliament Expresses its undivided solidarity with the people of Ukraine, along with its full support for the independence, sovereignty and territorial integrity of Ukraine within its internationally recognised borders, and underlines that this war of aggression constitutes a blatant and flagrant violation of the UN Charter and the fundamental principles of international law; reiterates its support for the commitments of the EU and its Member States to provide humanitarian assistance, military support, economic and financial aid and political support in every possible way until Ukraine’s victory in order to ultimately stop Russia’s war of aggression and allow Ukraine to liberate all its people and re-establish full control within its internationally recognised borders; stresses that the ultimate goal remains to achieve a just and lasting peace in Ukraine on Ukraine’s terms, ensuring the safety and dignity of its people within a peaceful and stable Europe;: (Request ID: NlbRQnGXRkjbgtkufs4rj)
+
+Bad request:
+Authorization header is correct, but the token seems invalid
+2024-11-27 12:22:15,991 - ERROR: Error processing resolution The European Parliament Calls for the EU and its Member States to actively work towards maintaining and achieving the broadest possible international support for Ukraine and identifying a peaceful solution to the war, which must be based on full respect for Ukraine’s independence, sovereignty and territorial integrity, the principles of international law, accountability for war crimes and the crime of aggression committed by Russia, and Russian reparations and other payments for the massive damage caused in Ukraine; calls for active EU engagement in implementing Ukraine’s Peace Formula and creating the grounds for holding the second Peace Summit;: (Request ID: coQpBrCxq98ZiaHIq3wps)
+
+Bad request:
+Authorization header is correct, but the token seems invalid
+2024-11-27 12:22:16,083 - ERROR: Error processing resolution The European Parliament Calls on the Commission to swiftly propose long-term financial assistance for the reconstruction of Ukraine in collaboration with partner countries, in particular by ensuring swift implementation of the Ukraine Facility and building on it to ensure continued support at adequate levels and resources for reconstruction commensurate with our political support for Ukraine;: (Request ID: tYdfuxT0KYoRntpLTswk9)
+
+Bad request:
+Authorization header is correct, but the token seems invalid
+2024-11-27 12:22:16,180 - ERROR: Error processing resolution The European Parliament Calls on all Member States to increase their funding for Ukraine and refrain from decreasing their contributions; reiterates its firm conviction that Russia must provide financial compensation for the massive damage it has caused in Ukraine; welcomes the decision of the Council to direct extraordinary revenues stemming from immobilised Russian state assets to the Ukraine Assistance Fund and the Ukraine Facility as well as the G7’s decision to offer Ukraine a USD 50 billion loan secured through immobilised Russian state assets; calls for quick progress in implementing the G7’s decision to offer Ukraine a USD 50 billion loan secured through immobilised Russian state assets, to ensure the timely disbursement of funds to Ukraine; calls for the EU to take the work forward, together with like-minded partners, by adapting sanctions legislation as necessary and by establishing a sound legal regime for the confiscation of Russian state-owned assets frozen by the EU;: (Request ID: WHLwLltwfw2Sr2phWfl2M)
+
+Bad request:
+Authorization header is correct, but the token seems invalid
+2024-11-27 12:22:16,224 - INFO: Results saved to ../data/results/analysis_results.csv
+2024-11-27 12:22:59,872 - INFO: Prepared 1364 resolutions
+2024-11-27 12:23:00,061 - ERROR: Error processing batch starting at index 0: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: Och6c9K_GenoBolagtfl1)
+
+Template error: template not found
+2024-11-27 12:23:00,166 - ERROR: Error processing resolution The European Parliament Condemns, in the strongest possible terms, Russia’s continued war of aggression against Ukraine, and the involvement of Belarus in this war, and demands that Russia immediately terminate all military activities in Ukraine, unconditionally withdraw all forces and military equipment from the entire internationally recognised territory of Ukraine and compensate Ukraine for the damage caused to its people, land, nature and infrastructure;: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: m78_5Ywf8i3-Xiq2qZfVv)
+
+Template error: template not found
+2024-11-27 12:23:00,272 - ERROR: Error processing resolution The European Parliament Expresses its undivided solidarity with the people of Ukraine, along with its full support for the independence, sovereignty and territorial integrity of Ukraine within its internationally recognised borders, and underlines that this war of aggression constitutes a blatant and flagrant violation of the UN Charter and the fundamental principles of international law; reiterates its support for the commitments of the EU and its Member States to provide humanitarian assistance, military support, economic and financial aid and political support in every possible way until Ukraine’s victory in order to ultimately stop Russia’s war of aggression and allow Ukraine to liberate all its people and re-establish full control within its internationally recognised borders; stresses that the ultimate goal remains to achieve a just and lasting peace in Ukraine on Ukraine’s terms, ensuring the safety and dignity of its people within a peaceful and stable Europe;: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: ys7rbV6bBRTsy83bKBsIQ)
+
+Template error: template not found
+2024-11-27 12:23:00,380 - ERROR: Error processing resolution The European Parliament Calls for the EU and its Member States to actively work towards maintaining and achieving the broadest possible international support for Ukraine and identifying a peaceful solution to the war, which must be based on full respect for Ukraine’s independence, sovereignty and territorial integrity, the principles of international law, accountability for war crimes and the crime of aggression committed by Russia, and Russian reparations and other payments for the massive damage caused in Ukraine; calls for active EU engagement in implementing Ukraine’s Peace Formula and creating the grounds for holding the second Peace Summit;: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: WpJ9vxxZZnDTxIHQLN8J4)
+
+Template error: template not found
+2024-11-27 12:23:00,480 - ERROR: Error processing resolution The European Parliament Calls on the Commission to swiftly propose long-term financial assistance for the reconstruction of Ukraine in collaboration with partner countries, in particular by ensuring swift implementation of the Ukraine Facility and building on it to ensure continued support at adequate levels and resources for reconstruction commensurate with our political support for Ukraine;: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: OriG7VJMTbbPiEIpMkA9a)
+
+Template error: template not found
+2024-11-27 12:23:00,586 - ERROR: Error processing resolution The European Parliament Calls on all Member States to increase their funding for Ukraine and refrain from decreasing their contributions; reiterates its firm conviction that Russia must provide financial compensation for the massive damage it has caused in Ukraine; welcomes the decision of the Council to direct extraordinary revenues stemming from immobilised Russian state assets to the Ukraine Assistance Fund and the Ukraine Facility as well as the G7’s decision to offer Ukraine a USD 50 billion loan secured through immobilised Russian state assets; calls for quick progress in implementing the G7’s decision to offer Ukraine a USD 50 billion loan secured through immobilised Russian state assets, to ensure the timely disbursement of funds to Ukraine; calls for the EU to take the work forward, together with like-minded partners, by adapting sanctions legislation as necessary and by establishing a sound legal regime for the confiscation of Russian state-owned assets frozen by the EU;: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: FbMvc4QLI_wcUK6sks7ic)
+
+Template error: template not found
+2024-11-27 15:40:51,369 - ERROR: Attempt 1 failed for google/gemma-7b: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: lnHIIAl0VQiek3M9KF6VH)
+
+Template error: template not found
+2024-11-27 15:40:53,476 - ERROR: Attempt 2 failed for google/gemma-7b: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: glsFHiGPSHK33kbmi4Eo_)
+
+Template error: template not found
+2024-11-27 15:40:55,581 - ERROR: Attempt 3 failed for google/gemma-7b: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: 9YIZ20Bin08muIM09qLCt)
+
+Template error: template not found
+2024-11-27 15:40:57,688 - ERROR: Attempt 1 failed for bigcode/starcoder: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/bigcode/starcoder/v1/chat/completions (Request ID: QtVffyMkZpZXR16Sindkw)
+
+Template error: template not found
+2024-11-27 15:40:59,811 - ERROR: Attempt 2 failed for bigcode/starcoder: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/bigcode/starcoder/v1/chat/completions (Request ID: TvST-oiKWRCsEVzG0lPbc)
+
+Template error: template not found
+2024-11-27 15:41:01,925 - ERROR: Attempt 3 failed for bigcode/starcoder: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/bigcode/starcoder/v1/chat/completions (Request ID: -HyQ3eeQObPf0sDqGOlvq)
+
+Template error: template not found
+2024-11-27 15:41:04,638 - ERROR: Attempt 1 failed for google/gemma-7b: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: GfytYtKxaGkqvdYJ5WNhp)
+
+Template error: template not found
+2024-11-27 15:41:06,808 - ERROR: Attempt 2 failed for google/gemma-7b: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: TbnsvD-Wz5mlNTft8XFYL)
+
+Template error: template not found
+2024-11-27 15:41:08,921 - ERROR: Attempt 3 failed for google/gemma-7b: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: yU8vkOz3ZkET2jb0gCbSt)
+
+Template error: template not found
+2024-11-27 15:41:11,217 - ERROR: Attempt 1 failed for bigcode/starcoder: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/bigcode/starcoder/v1/chat/completions (Request ID: smgpLe81VZH876c1JMz7y)
+
+Template error: template not found
+2024-11-27 15:41:13,314 - ERROR: Attempt 2 failed for bigcode/starcoder: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/bigcode/starcoder/v1/chat/completions (Request ID: CHq5hXy6IrZZ-s88XyBUb)
+
+Template error: template not found
+2024-11-27 15:41:15,424 - ERROR: Attempt 3 failed for bigcode/starcoder: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/bigcode/starcoder/v1/chat/completions (Request ID: SX1ePPB5XhPk-Uza44Lgs)
+
+Template error: template not found
+2024-11-27 15:41:18,080 - ERROR: Attempt 1 failed for google/gemma-7b: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: w7PgUDhHN6QrO1mm_wlma)
+
+Template error: template not found
+2024-11-27 15:41:20,185 - ERROR: Attempt 2 failed for google/gemma-7b: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: HH9w_xM_rRXT8ZKLiJtB7)
+
+Template error: template not found
+2024-11-27 15:41:22,300 - ERROR: Attempt 3 failed for google/gemma-7b: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: GfdfkfUb-rdr2YzFMKqK8)
+
+Template error: template not found
+2024-11-27 15:41:24,402 - ERROR: Attempt 1 failed for bigcode/starcoder: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/bigcode/starcoder/v1/chat/completions (Request ID: liqDD-bhWNM-4_IjBNHhQ)
+
+Template error: template not found
+2024-11-27 15:41:26,576 - ERROR: Attempt 2 failed for bigcode/starcoder: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/bigcode/starcoder/v1/chat/completions (Request ID: gFNizRp9-LjlZtXenj-wU)
+
+Template error: template not found
+2024-11-27 15:41:28,788 - ERROR: Attempt 3 failed for bigcode/starcoder: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/bigcode/starcoder/v1/chat/completions (Request ID: EZEr73pu4SqP8agvb7-jC)
+
+Template error: template not found
+2024-11-27 15:41:31,557 - ERROR: Attempt 1 failed for google/gemma-7b: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: GgKKWxAf4MbFGoxrX51sS)
+
+Template error: template not found
+2024-11-27 15:41:33,662 - ERROR: Attempt 2 failed for google/gemma-7b: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: O99A6qJW6baNI5uPu8gN6)
+
+Template error: template not found
+2024-11-27 15:41:35,763 - ERROR: Attempt 3 failed for google/gemma-7b: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: GhxUJgZ9Z0lC6o6RnjCDj)
+
+Template error: template not found
+2024-11-27 15:41:37,890 - ERROR: Attempt 1 failed for bigcode/starcoder: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/bigcode/starcoder/v1/chat/completions (Request ID: kV8Ffce-qX7SlXE1ObDcu)
+
+Template error: template not found
+2024-11-27 15:41:40,009 - ERROR: Attempt 2 failed for bigcode/starcoder: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/bigcode/starcoder/v1/chat/completions (Request ID: 64f9e0Rhpy9CKH1sTIQbv)
+
+Template error: template not found
+2024-11-27 15:41:42,110 - ERROR: Attempt 3 failed for bigcode/starcoder: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/bigcode/starcoder/v1/chat/completions (Request ID: ivYv70XSiBSylbjbt8SZF)
+
+Template error: template not found
+2024-11-27 15:41:45,020 - ERROR: Attempt 1 failed for google/gemma-7b: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: Q3EF8VGrM5bxGXcvjV9Hh)
+
+Template error: template not found
+2024-11-27 15:41:47,214 - ERROR: Attempt 2 failed for google/gemma-7b: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: e3RyMrWZQ795mOVwP6gE-)
+
+Template error: template not found
+2024-11-27 15:41:49,343 - ERROR: Attempt 3 failed for google/gemma-7b: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/google/gemma-7b/v1/chat/completions (Request ID: elbYLAScxi4zzs-dXd5lj)
+
+Template error: template not found
+2024-11-27 15:41:51,448 - ERROR: Attempt 1 failed for bigcode/starcoder: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/bigcode/starcoder/v1/chat/completions (Request ID: WPu9XDMf17lOWw9xnhrZu)
+
+Template error: template not found
+2024-11-27 15:41:53,552 - ERROR: Attempt 2 failed for bigcode/starcoder: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/bigcode/starcoder/v1/chat/completions (Request ID: CrWlJKIgS4T8-9FFfTKpW)
+
+Template error: template not found
+2024-11-27 15:41:55,658 - ERROR: Attempt 3 failed for bigcode/starcoder: 422 Client Error: Unprocessable Entity for url: https://api-inference.huggingface.co/models/bigcode/starcoder/v1/chat/completions (Request ID: PFwEQzst8R5ur41A9R1jU)
+
+Template error: template not found
+2024-11-27 15:49:40,488 - ERROR: Attempt 1 failed for mistralai/Mixtral-8x7B-Instruct-v0.1: (ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')), '(Request ID: 0c405178-ba13-4050-91aa-1bb756d2bbf6)')
+2024-11-27 15:50:12,497 - ERROR: Attempt 2 failed for mistralai/Mixtral-8x7B-Instruct-v0.1: (MaxRetryError("HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/mistralai/Mixtral-8x7B-Instruct-v0.1/v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1232930d0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))"), '(Request ID: 6e16b80b-fef9-4d1a-8eb4-ee2e7239b7b1)')
+2024-11-27 15:50:44,504 - ERROR: Attempt 3 failed for mistralai/Mixtral-8x7B-Instruct-v0.1: (MaxRetryError("HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/mistralai/Mixtral-8x7B-Instruct-v0.1/v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x11db59f90>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))"), '(Request ID: 3e0488bd-7a6c-4720-9932-67cfa5f353e2)')
+2024-11-27 16:34:25,620 - ERROR: Attempt 1 failed: name 'random' is not defined
+2024-11-27 16:34:25,632 - ERROR: Attempt 2 failed: name 'random' is not defined
+2024-11-27 16:34:25,782 - ERROR: Attempt 3 failed: name 'random' is not defined
+2024-11-27 16:34:25,784 - ERROR: Attempt 1 failed: name 'random' is not defined
+2024-11-27 16:34:25,786 - ERROR: Attempt 2 failed: name 'random' is not defined
+2024-11-27 16:34:25,791 - ERROR: Attempt 3 failed: name 'random' is not defined
+2024-11-27 16:34:25,795 - ERROR: Attempt 1 failed: name 'random' is not defined
+2024-11-27 16:34:25,807 - ERROR: Attempt 2 failed: name 'random' is not defined
+2024-11-27 16:34:25,825 - ERROR: Attempt 3 failed: name 'random' is not defined
+2024-11-27 16:34:25,828 - ERROR: Attempt 1 failed: name 'random' is not defined
+2024-11-27 16:34:25,838 - ERROR: Attempt 2 failed: name 'random' is not defined
+2024-11-27 16:34:25,841 - ERROR: Attempt 3 failed: name 'random' is not defined
+2024-11-27 16:34:25,842 - ERROR: Attempt 1 failed: name 'random' is not defined
+2024-11-27 16:34:25,843 - ERROR: Attempt 2 failed: name 'random' is not defined
+2024-11-27 16:34:25,844 - ERROR: Attempt 3 failed: name 'random' is not defined
+2024-11-27 16:40:44,501 - ERROR: Attempt 1 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:40:44,503 - ERROR: Attempt 2 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:40:44,505 - ERROR: Attempt 3 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:40:44,506 - ERROR: Attempt 1 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:40:44,508 - ERROR: Attempt 2 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:40:44,511 - ERROR: Attempt 3 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:40:44,517 - ERROR: Attempt 1 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:40:44,518 - ERROR: Attempt 2 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:40:44,519 - ERROR: Attempt 3 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:40:44,521 - ERROR: Attempt 1 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:40:44,522 - ERROR: Attempt 2 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:40:44,523 - ERROR: Attempt 3 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:40:44,524 - ERROR: Attempt 1 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:40:44,525 - ERROR: Attempt 2 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:40:44,526 - ERROR: Attempt 3 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:49:12,120 - ERROR: Attempt 1 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:49:12,197 - ERROR: Attempt 2 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:49:12,201 - ERROR: Attempt 3 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:49:12,203 - ERROR: Attempt 1 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:49:12,204 - ERROR: Attempt 2 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:49:12,205 - ERROR: Attempt 3 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:49:12,208 - ERROR: Attempt 1 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:49:12,213 - ERROR: Attempt 2 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:49:12,214 - ERROR: Attempt 3 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:49:12,217 - ERROR: Attempt 1 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:49:12,218 - ERROR: Attempt 2 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:49:12,219 - ERROR: Attempt 3 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:49:12,221 - ERROR: Attempt 1 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:49:12,222 - ERROR: Attempt 2 failed: 'ProxyClientChat' object is not callable
+2024-11-27 16:49:12,223 - ERROR: Attempt 3 failed: 'ProxyClientChat' object is not callable
