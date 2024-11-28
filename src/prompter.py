@@ -28,7 +28,6 @@ class Prompter:
     Attributes:
         model_name (str): Name of the language model to use.
         output_file (str): Name of the output CSV file.
-        prompt_template (str): Template for the prompts sent to the model.
         dg_input_folder (str): Input folder for the dataset generator.
         dg_output_folder (str): Output folder for the dataset generator.
         do_preprocess (bool): Whether to preprocess the dataset.
@@ -42,7 +41,6 @@ class Prompter:
         self,
         model_name,
         output_file:str,
-        prompt_template=PROMPT_TEMPLATE,
         dg_input_folder='data/raw/',
         dg_output_folder='data/processed/',
         do_preprocess=False,
