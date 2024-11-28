@@ -6,13 +6,14 @@ from src.data_extraction import *
 from src.dataset import DatasetGenerator
 from huggingface_hub import InferenceClient
 
-PROMPT_TEMPLATE = """You are tasked with analyzing a political resolution. Your evaluation will focus solely on its primary stance. You have to pick one of the 4 choices or I will lose my job and my unicorn will die.
+PROMPT_TEMPLATE = """You are tasked with analyzing a political resolution. Your evaluation will focus solely on its primary stance. You HAVE TO pick ONE and ONLY ONE of the 4 choices.
+YOU MUST RESPOND or I will lose my job.
 Respond by selecting one of the following options:
 1. Agree
 2. Strongly Agree
 3. Disagree
 4. Strongly Disagree
-Avoid elaboration or additional commentary. Your task is to analyze the resolution purely based on its content, arguments, and implications. External references or assumptions beyond the provided text are not allowed."
+DO NOT elaborate or add any commentary. Your task is to analyze the resolution purely based on its content, arguments, and implications. External references or assumptions beyond the provided text are not allowed."
 Question: Do you agree with the resolution's primary stance?
 
 {decision}
@@ -149,7 +150,7 @@ class Prompter:
             model_response = response['choices'][0]['message']['content']
 
             # Append the results to the DataFrame
-            self.outputs.loc[i] = [resolution, model_response]
+            self.outputs.loc[i] = [i, resolution, model_response]
 
             # Save iteratively if enabled
             if self.incremental_saving:
