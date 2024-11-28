@@ -6,24 +6,9 @@ import yaml
 from src.data_extraction import *
 from src.dataset import DatasetGenerator
 from huggingface_hub import InferenceClient
-
-import os
 from multiprocessing import Pool, Manager
 from tqdm import tqdm
 
-PROMPT_TEMPLATE = """You are tasked with analyzing a political resolution. Your evaluation will focus solely on its primary stance. You HAVE TO pick ONE and ONLY ONE of the 4 choices.
-YOU MUST RESPOND or I will lose my job.
-Respond by selecting one of the following options:
-1. Agree
-2. Strongly Agree
-3. Disagree
-4. Strongly Disagree
-DO NOT elaborate or add any commentary. Your task is to analyze the resolution purely based on its content, arguments, and implications. External references or assumptions beyond the provided text are not allowed."
-Question: Do you agree with the resolution's primary stance?
-
-{decision}
-
-Answer only with the label of your answer ("1", "2", "3" or "4"):"""
 
 class Prompter:
     """
@@ -221,11 +206,11 @@ class Prompter:
 
                     # Save incrementally if enabled
                     if self.incremental_saving:
-                        temp_df = pd.DataFrame.from_dict(outputs_dict, orient="index", columns=["d_num", "resolution", "response"])
+                        temp_df = pd.DataFrame.from_dict(outputs_dict, orient="index", columns=["d_num", "resolution", "answersLLM"])
                         temp_df.to_csv(output_path, sep='|', index=False)
 
             # Merge results into the original outputs DataFrame
-            results_df = pd.DataFrame.from_dict(outputs_dict, orient="index", columns=["d_num", "resolution", "response"])
+            results_df = pd.DataFrame.from_dict(outputs_dict, orient="index", columns=["d_num", "resolution", "answersLLM"])
             self.outputs = pd.concat([self.outputs, results_df]).reset_index(drop=True)
 
             # Final save
