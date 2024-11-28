@@ -7,6 +7,10 @@ from src.data_extraction import *
 from src.dataset import DatasetGenerator
 from huggingface_hub import InferenceClient
 
+import os
+from multiprocessing import Pool, Manager
+from tqdm import tqdm
+
 PROMPT_TEMPLATE = """You are tasked with analyzing a political resolution. Your evaluation will focus solely on its primary stance. You HAVE TO pick ONE and ONLY ONE of the 4 choices.
 YOU MUST RESPOND or I will lose my job.
 Respond by selecting one of the following options:
@@ -190,3 +194,64 @@ class Prompter:
             pd.DataFrame: The DataFrame containing all resolutions and their model responses.
         """
         return self.outputs
+    def generate_responses_parallel(self):
+        """
+        Generates responses for all resolutions using the LLM in parallel
+        and appends them to the outputs.
+        """
+        processed_indices = set(self.outputs['d_num'])  # Track already processed resolutions
+        output_path = os.path.join(self.responses_output_folder, self.output_file)
+
+        # Prepare inputs for multiprocessing
+        tasks = [
+            (i, resolution, self.make_prompt, self.client, self.model_name, self.kwargs)
+            for i, resolution in enumerate(self.resolutions)
+            if i not in processed_indices
+        ]
+
+        # Use Manager for shared DataFrame
+        with Manager() as manager:
+            outputs_dict = manager.dict()  # Shared dictionary to collect results
+
+            # Process in parallel
+            with Pool(processes=min(len(tasks), os.cpu_count())) as pool:
+                for result in tqdm(pool.imap_unordered(process_resolution, tasks, chunksize=16), total=len(tasks), desc="Processing Resolutions"):
+                    i, resolution, model_response = result
+                    outputs_dict[i] = [i, resolution, model_response]
+
+                    # Save incrementally if enabled
+                    if self.incremental_saving:
+                        temp_df = pd.DataFrame.from_dict(outputs_dict, orient="index", columns=["d_num", "resolution", "response"])
+                        temp_df.to_csv(output_path, sep='|', index=False)
+
+            # Merge results into the original outputs DataFrame
+            results_df = pd.DataFrame.from_dict(outputs_dict, orient="index", columns=["d_num", "resolution", "response"])
+            self.outputs = pd.concat([self.outputs, results_df]).reset_index(drop=True)
+
+            # Final save
+            self.outputs.to_csv(output_path, sep='|', index=False)
+
+        return self.outputs
+
+
+def process_resolution(args):
+    """
+    Worker function for processing a single resolution.
+    """
+    i, resolution, make_prompt, client, model_name, kwargs = args
+
+    # Generate the prompt
+    prompt = make_prompt(decision_str=resolution)
+
+    # Query the model
+    response = client.chat.completions.create(
+        model=model_name,
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=128,
+        **kwargs
+    )
+
+    # Extract the model's response
+    model_response = response['choices'][0]['message']['content']
+    return i, resolution, model_response
+
