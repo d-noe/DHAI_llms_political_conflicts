@@ -47,10 +47,9 @@ To set up the project, follow these steps:
 1. Clone the repository: `git clone https://github.com/your-username/llm-bias-analysis.git`
 2. Navigate to the project directory: `cd llm-bias-analysis`
 3. (Optional) Create a virtual environment and activate it.
-4. Install the required dependencies: `pip install -r requirements.txt`
-5. Prepare the data by running the `dataprep.ipynb` Jupyter Notebook.
-6. Generate the model responses by running the `prompter.ipynb` Jupyter Notebook.
-7. Analyze the results and findings in the respective notebooks.
+4. Prepare the data by running the `dataprep.ipynb` Jupyter Notebook.
+5. Generate the model responses by running the `prompter.ipynb` Jupyter Notebook.
+6. Analyze the results and findings in the respective notebooks.
 
 ## Usage
 The project's main functionalities are:
